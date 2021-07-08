@@ -1,0 +1,7 @@
+{
+  "name": "waris",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
