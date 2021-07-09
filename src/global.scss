@@ -25,6 +25,8 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@import "~leaflet/dist/leaflet.css";
+
 .app-banner {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#201913+0,9a653e+100 */
     background: #201913; /* Old browsers */
@@ -70,3 +72,5 @@
 ion-tab-button {opacity: 0.4;}
 ion-tab-button.tab-selected {opacity: 1;}
 ion-tab-button ion-icon {font-size: 25px !important;}
+#map {height: 40vh;}
+ion-back-button {margin-left: 7px;}

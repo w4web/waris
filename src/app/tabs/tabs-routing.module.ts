@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('../search/search.module').then( m => m.SearchPageModule)
       },
       {
+        path: 'place',
+        loadChildren: () => import('../place/place.module').then( m => m.PlacePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
