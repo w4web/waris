@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "icon": "credit-card",
+        "name": "Pinautomaat",
+        "link": "/tabs/search"
+    },
+    {
+        "id": 2,
+        "icon": "utensils",
+        "name": "Restaurant",
+        "link": "/tabs/search"
+    },
+    {
+        "id": 3,
+        "icon": "gas-pump",
+        "name": "Tankstation",
+        "link": "/tabs/search"
+    },
+    {
+        "id": 4,
+        "icon": "coffee",
+        "name": "Bar/Cafe",
+        "link": "/tabs/search"
+    },
+    {
+        "id": 5,
+        "icon": "restroom",
+        "name": "Toilet",
+        "link": "/tabs/search"
+    },
+    {
+        "id": 6,
+        "icon": "parking",
+        "name": "Parkeerplek",
+        "link": "/tabs/search"
+    }
+]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../shared/services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  placeList;
+
+  constructor( public dataService: DataService ) { }
 
   ngOnInit() {
+
+    this.dataService.getPlaceList().subscribe((data: any) => {
+      this.placeList = data;
+    });
+
   }
 
 }
