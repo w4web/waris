@@ -12,7 +12,7 @@
     <div id="map"></div>
   </div>
   <div class="placeListing">
-    <ion-list-header><span>Restaurants <span class="place-count">(10)</span></span></ion-list-header>
+    <ion-list-header><span>{{placeName}} <span class="place-count">(10)</span></span></ion-list-header>
     <ion-grid>
       <ion-row *ngIf="places">
         <ion-col size="12" *ngFor="let place of places[placeName]; let i = index">
