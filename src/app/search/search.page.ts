@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import * as L from "leaflet";
 
 @Component({
@@ -8,17 +8,24 @@ import * as L from "leaflet";
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
 })
-export class SearchPage implements OnInit, AfterViewInit {
+export class SearchPage implements OnInit {
 
   map: L.Map;
+  places:any;
 
-  constructor( public HttpClient: HttpClient, public router: Router ) { }
+  placeName;
+
+  constructor( public HttpClient: HttpClient, public router: Router, public activatedRoute: ActivatedRoute ) {
+
+    this.placeName = this.activatedRoute.snapshot.params.name;
+
+  }
 
   ngOnInit() {
 
     this.map = L.map('map', {
       center: [33.6396965, -84.4304574],
-      zoom: 4,
+      zoom: 12,
       renderer: L.canvas()
     })
 
@@ -30,16 +37,15 @@ export class SearchPage implements OnInit, AfterViewInit {
       this.map.invalidateSize();
     }, 1000);
 
-  }
-
-  ngAfterViewInit() {
-    this.HttpClient.get('https://nominatim.openstreetmap.org/search/Gdansk?format=json&polygon=1&polygon_geojson=1&limit=9999')
-    .subscribe(restaurants => {
-      this.initMap(restaurants);
+    this.HttpClient.get('./assets/placeData.json')
+    .subscribe(data => {
+      this.places = data;
+      this.initMap(this.places[this.placeName]);
     });
+
   }
 
-  initMap(restaurants) {
+  initMap(places) {
 
     const customMarkerIcon = L.icon({
       iconUrl: './assets/images/custom-marker-icon.png',
@@ -47,9 +53,12 @@ export class SearchPage implements OnInit, AfterViewInit {
       popupAnchor: [0, -20]
     });
 
-    restaurants.forEach((restaurant) => {
-      L.marker([restaurant.lat, restaurant.lon], {icon: customMarkerIcon})
-      .bindPopup(`<b>${restaurant.display_name}</b>`, { autoClose: false })
+    places.forEach((place) => {
+      L.marker([place.latlng.lat, place.latlng.lng], {icon: customMarkerIcon})
+      .bindPopup(`<div class="pop-card">
+                    <b>${place.name}</b>
+                    <p><small>${place.address}</small></p>
+                  </div>`, { autoClose: false })
       .on('click', () => this.router.navigateByUrl('/tabs/place'))
       .addTo(this.map).openPopup();
     });

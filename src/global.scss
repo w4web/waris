@@ -72,5 +72,42 @@
 ion-tab-button {opacity: 0.4;}
 ion-tab-button.tab-selected {opacity: 1;}
 ion-tab-button ion-icon {font-size: 25px !important;}
-#map {height: 40vh;}
-ion-back-button {margin-left: 7px;}
+.mapOuter {
+	margin: 10px 10px 25px 10px;
+	box-shadow: 0 0 7px -2px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    overflow: hidden;
+}
+#map {height: 45vh;}
+ion-back-button {margin-left: 7px; font-size: 12px !important; color: #c0ab3f;}
+.pop-card b {
+	display: block;
+	color: #c0ab3f;
+}
+.pop-card p {
+	margin: 0 0 7px 0;
+}
+ion-list-header {margin-bottom: 10px; position: relative; min-height: auto; 
+    > span {display: inline-block; background-color: #FFF; z-index: 1; padding-right: 15px;}
+}
+ion-list-header::after {content: ''; position: absolute; height: 1px; width: 100%; background-color: #c0ab3f; left: 50px; top: 50%;}
+.card-inner {
+	display: flex;
+	align-items: center;
+    ion-card-content {
+        flex-grow: 1;
+        width: calc(100% - 100px);
+        padding: 10px;
+        h2 {font-weight: 700;}
+    }
+}
+.card-img-left {
+	width: 100px;
+}
+.placeListing ion-card {margin: 3px 10px;}
+.place-count {color: #c0ab3f;}
+ion-header ion-title fa-icon {
+	color: #c0ab3f;
+	font-size: 14px;
+	margin-right: 5px;
+}
