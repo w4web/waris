@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PlacePageRoutingModule } from './place-routing.module';
 import { PlacePage } from './place.page';
+import { IonicRatingComponentModule } from 'ionic-rating-component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { PlacePage } from './place.page';
     FormsModule,
     IonicModule,
     PlacePageRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    IonicRatingComponentModule
   ],
   declarations: [PlacePage]
 })

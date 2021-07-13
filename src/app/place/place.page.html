@@ -8,17 +8,114 @@
 </ion-header>
 
 <ion-content>
+  <div class="placeDetail-banner">
+    <img src="./assets/images/places.jpg" alt="img" />
+    <div class="fabIcon">
+      <fa-icon icon="share-alt"></fa-icon>
+    </div>
+  </div>
+
   <div class="placeDetail">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="12">
-          <ion-card>
-            <ion-card-content class="ion-text-center">
-              <h2>Places will be here..</h2>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <h2>Mission Chinese Food</h2>
+    <div class="rating">
+      <span class="total-rate">4.5</span>
+      <ionic-rating-component #rating
+        activeIcon = "star"
+        defaultIcon = "star-outline"
+        activeColor = "#c0ab3f" 
+        defaultColor = "#c0ab3f"
+        readonly="false"
+        rating="4"
+        fontSize = "15px"
+        (ratingChanged)="onRatingChange($event)">
+      </ionic-rating-component>
+      <span class="voter-count">452 Votes</span>
+    </div>
+    <ul class="noStyle">
+      <li class="address">
+        <fa-icon icon="phone-alt"></fa-icon><p><b>+31-20-000-0000</b></p>
+      </li>
+      <li class="address">
+        <fa-icon icon="envelope"></fa-icon><p>info@missionchina.com</p>
+      </li>
+      <li class="address">
+        <fa-icon icon="map-marker-alt"></fa-icon><p>171 E Broadway, New York, NY 10002</p>
+      </li>
+      <li class="address">
+        <fa-icon icon="clock"></fa-icon><p>Opening hours <b>10:30 AM - 7:30 PM</b></p>
+      </li>
+    </ul>
+
+    <hr>
+
+    <h6>Reviews <span class="review-count">(452)</span></h6>
+
+    <div class="review-wrap">
+      <ion-card>
+        <div class="card-inner">
+          <div class="card-img-left">
+            <img src="./assets/images/user.png" alt="img" />
+          </div>
+          <ion-card-content>
+            <h2>John smith</h2>
+            <p>Food price is low and with good taste.</p>
+            <ionic-rating-component #rating
+              activeIcon = "star"
+              defaultIcon = "star-outline"
+              activeColor = "#c0ab3f" 
+              defaultColor = "#c0ab3f"
+              readonly="false"
+              rating="4"
+              fontSize = "15px"
+              (ratingChanged)="onRatingChange($event)">
+            </ionic-rating-component>
+          </ion-card-content>
+        </div>
+      </ion-card>
+
+      <ion-card>
+        <div class="card-inner">
+          <div class="card-img-left">
+            <img src="./assets/images/user2.png" alt="img" />
+          </div>
+          <ion-card-content>
+            <h2>Pamela anderson</h2>
+            <p>Best food ever...</p>
+            <ionic-rating-component #rating
+              activeIcon = "star"
+              defaultIcon = "star-outline"
+              activeColor = "#c0ab3f" 
+              defaultColor = "#c0ab3f"
+              readonly="false"
+              rating="4"
+              fontSize = "15px"
+              (ratingChanged)="onRatingChange($event)">
+            </ionic-rating-component>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class="review-wrap">
+      <h6>Description</h6>
+      <strong>Location and Overview:</strong>
+      <p>Established in the year 2015, Vraj Vatika Restaurant And Resort in Jetalsar Jn, Rajkot is a top player in the category Multicuisine Restaurants in the Rajkot. This well-known establishment acts as a one-stop destination servicing customers both local and from other parts of Rajkot. Over the course of its journey, this business has established a firm foothold in it’s industry. </p>
+    </div>
+
+    <ul class="social noStyle">
+      <!-- <li><a href="#"><fa-icon icon="facebook-f"></fa-icon></a></li> -->
+      <!-- <li><a href="#"><fa-icon icon="twitter"></fa-icon></a></li> -->
+      <!-- <li><a href="#"><fa-icon icon="instagram"></fa-icon></a></li> -->
+      <!-- <li><a href="#"><fa-icon icon="linkedin-in"></fa-icon></a></li> -->
+      <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+    </ul>
+    
+
   </div>
 </ion-content>

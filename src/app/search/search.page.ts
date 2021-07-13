@@ -24,8 +24,8 @@ export class SearchPage implements OnInit {
   ngOnInit() {
 
     this.map = L.map('map', {
-      center: [33.6396965, -84.4304574],
-      zoom: 12,
+      center: [40.713829, -73.989667],
+      zoom: 11,
       renderer: L.canvas()
     })
 
@@ -49,9 +49,19 @@ export class SearchPage implements OnInit {
 
     const customMarkerIcon = L.icon({
       iconUrl: './assets/images/custom-marker-icon.png',
-      iconSize: [32, 32], 
+      iconSize: [32, 45], 
       popupAnchor: [0, -20]
     });
+
+    // places.forEach((place) => {
+    //   L.marker([place.latlng.lat, place.latlng.lng], {icon: customMarkerIcon})
+    //   .bindPopup(`<div class="pop-card">
+    //                 <b>${place.name}</b>
+    //                 <p><small>${place.address}</small></p>
+    //               </div>`, { autoClose: false })
+    //   .on('click', () => this.router.navigateByUrl('/tabs/place'))
+    //   .addTo(this.map).openPopup();
+    // });
 
     places.forEach((place) => {
       L.marker([place.latlng.lat, place.latlng.lng], {icon: customMarkerIcon})
@@ -59,9 +69,9 @@ export class SearchPage implements OnInit {
                     <b>${place.name}</b>
                     <p><small>${place.address}</small></p>
                   </div>`, { autoClose: false })
-      .on('click', () => this.router.navigateByUrl('/tabs/place'))
-      .addTo(this.map).openPopup();
+      .addTo(this.map);
     });
+
   }
 
 }
