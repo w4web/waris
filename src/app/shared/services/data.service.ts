@@ -13,4 +13,8 @@ export class DataService {
     return this.http.get<any>('./assets/placeList.json');
   }
 
+  getSettingFields(): any {
+    return this.http.get<any>('./assets/settingFields.json');
+  }
+
 }

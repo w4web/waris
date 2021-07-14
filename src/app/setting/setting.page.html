@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" icon="chevron-back-outline" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title><fa-icon icon="cog"></fa-icon> Setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="app-setting">
+    <ion-card>
+      <ion-card-content>
+        <h2><span>Add new amenity</span></h2>
+        <form [formGroup]="form" (ngSubmit)="save()">
+          <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form">
+          </formly-form>
+          <div class="form-btns ion-margin-top">
+            <ion-button type="submit" size="small" [disabled]="!form.valid" color="primary">Save</ion-button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+</ion-content>

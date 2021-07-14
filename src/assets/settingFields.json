@@ -1,0 +1,16 @@
+[
+    {
+        "key": "icon",
+        "type": "iSelect",
+        "templateOptions": {
+            "label": "Select icon"
+        }
+    },
+    {
+        "key": "amenity",
+        "type": "customSelect",
+        "templateOptions": {
+            "label": "Select amenity"
+        }
+    }
+]

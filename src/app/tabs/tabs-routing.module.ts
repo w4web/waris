@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../place/place.module').then( m => m.PlacePageModule)
       },
       {
+        path: 'setting',
+        loadChildren: () => import('../setting/setting.module').then( m => m.SettingPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

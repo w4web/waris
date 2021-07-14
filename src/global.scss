@@ -26,6 +26,7 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 @import "~leaflet/dist/leaflet.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 ul.noStyle {list-style: none; padding: 0; margin: 0 0 20px 0;}
 hr {
@@ -199,3 +200,34 @@ ion-header ion-title fa-icon {
         }
     }
 }
+
+.app-setting {
+    .form-group {
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        ng-select fa-icon {
+            width: 20px;
+            text-align: center;
+            margin-right: 10px;
+            display: inline-block;
+        }
+    }
+    ion-card {
+        overflow: visible;
+    }
+    h2 {
+        margin: 0 0 25px 0;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        position: relative;
+
+        span {display: inline-block; position: relative; background-color: #FFF; z-index: 1; padding: 0 15px; 
+            text-transform: capitalize;}
+        &::after {content: ''; position: absolute; height: 1px; width: 100%; background-color: #CCC; left: 0; top: 50%;}
+    }
+}
+
+formly-field {display: block; margin-bottom: 15px;}
