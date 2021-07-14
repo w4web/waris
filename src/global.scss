@@ -101,15 +101,24 @@ ion-list-header::after {content: ''; position: absolute; height: 1px; width: 100
 	align-items: center;
     ion-card-content {
         flex-grow: 1;
-        width: calc(100% - 100px);
+        width: calc(100% - 110px);
         padding: 10px;
         h2 {font-weight: 700;}
     }
 }
 .card-img-left {
-	width: 100px;
+	width: 70px;
 }
-.placeListing ion-card {margin: 3px 10px;}
+.card-img-right {
+	width: 40px;
+	padding-right: 15px;
+	text-align: center;
+	font-size: 22px;
+    cursor: pointer;
+}
+.placeListing {
+    ion-card {margin: 3px 10px;}
+}
 .place-count {color: #c0ab3f;}
 ion-header ion-title fa-icon {
 	color: #c0ab3f;
@@ -231,3 +240,25 @@ ion-header ion-title fa-icon {
 }
 
 formly-field {display: block; margin-bottom: 15px;}
+[routerlink] {cursor: pointer;}
+.rating-dis-wrap {
+    color: #a6a6a6;
+    ionic-rating-component {
+        display: inline-block;
+        margin-left: 3px;
+    }
+    .place-distance {
+        display: inline-block;
+        color: #c0ab3f;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 12px;
+    }
+}
+.dot-dot { 
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}

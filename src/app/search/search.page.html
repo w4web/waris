@@ -16,26 +16,34 @@
     <ion-grid>
       <ion-row *ngIf="places">
         <ion-col size="12" *ngFor="let place of places[placeName]; let i = index">
-          <ion-card routerLink="/tabs/place">
+          <ion-card>
             <div class="card-inner">
-              <div class="card-img-left">
+              <div class="card-img-left" routerLink="/tabs/place">
                 <img src="./assets/images/food.jpg">
               </div>
               <ion-card-content>
-                <h2>{{place.name}}</h2>
-                <p>{{place.address}}</p>
-                <ionic-rating-component #rating
-                  activeIcon = "star"
-                  defaultIcon = "star-outline"
-                  activeColor = "#c0ab3f" 
-                  defaultColor = "#c0ab3f"
-                  readonly="false"
-                  rating="4"
-                  fontSize = "15px"
-                  (ratingChanged)="onRatingChange($event)">
-                </ionic-rating-component>
+                <h2 routerLink="/tabs/place">{{place.name}}</h2>
+                <p class="dot-dot">{{place.address}}</p>
+                <div class="rating-dis-wrap">
+                  <div class="place-distance">
+                    > 100 M
+                  </div>|
+                  <ionic-rating-component #rating
+                    activeIcon = "star"
+                    defaultIcon = "star-outline"
+                    activeColor = "#c0ab3f" 
+                    defaultColor = "#c0ab3f"
+                    readonly="false"
+                    rating="4"
+                    fontSize = "15px"
+                    (ratingChanged)="onRatingChange($event)">
+                  </ionic-rating-component>
+                </div>
+                
               </ion-card-content>
-              <!-- <ion-icon name="star-outline"></ion-icon> -->
+              <div class="card-img-right">
+                <fa-icon icon="map-marker-alt"></fa-icon>
+              </div>
             </div>
           </ion-card>
         </ion-col>
