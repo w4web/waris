@@ -3,42 +3,36 @@
         "id": 1,
         "icon": "credit-card",
         "name": "Pinautomaat",
-        "link": "/tabs/search",
         "search": "atm"
     },
     {
         "id": 2,
         "icon": "utensils",
         "name": "Restaurant",
-        "link": "/tabs/search",
         "search": "restaurants"
     },
     {
         "id": 3,
         "icon": "gas-pump",
         "name": "Tankstation",
-        "link": "/tabs/search",
         "search": "fuelStation"
     },
     {
         "id": 4,
         "icon": "coffee",
         "name": "Bar/Cafe",
-        "link": "/tabs/search",
         "search": "barAndCafe"
     },
     {
         "id": 5,
         "icon": "restroom",
         "name": "Toilet",
-        "link": "/tabs/search",
         "search": "toilet"
     },
     {
         "id": 6,
         "icon": "parking",
         "name": "Parkeerplek",
-        "link": "/tabs/search",
         "search": "parking"
     }
 ]

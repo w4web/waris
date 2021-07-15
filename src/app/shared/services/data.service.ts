@@ -7,14 +7,10 @@ import { HttpClient } from '@angular/common/http';
 
 export class DataService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getPlaceList(): any {
-    return this.http.get<any>('./assets/placeList.json');
-  }
-
-  getSettingFields(): any {
-    return this.http.get<any>('./assets/settingFields.json');
+  getAmenityFields(): any {
+    return this.http.get<any>('./assets/amenityFields.json');
   }
 
 }

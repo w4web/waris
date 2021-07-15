@@ -7,10 +7,17 @@
         }
     },
     {
-        "key": "amenity",
+        "key": "name",
         "type": "customSelect",
         "templateOptions": {
             "label": "Select amenity"
+        }
+    },
+    {
+        "key": "search",
+        "type": "customInput",
+        "templateOptions": {
+            "label": "Search tag"
         }
     }
 ]

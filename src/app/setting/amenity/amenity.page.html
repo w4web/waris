@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" icon="chevron-back-outline" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>amenity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="page-amenity">
+
+    <div *ngIf="!isAdd" class="add-new">
+      <ion-button (click)="isAdd = !isAdd" fill="outline" size="small" color="primary"><fa-icon class="cardIcon" icon="plus"></fa-icon></ion-button>
+    </div>
+
+    <div *ngIf="isAdd" class="addAmenity">
+      <ion-card>
+        <ion-card-content>
+          <h2><span>Add new amenity</span></h2>
+          <form [formGroup]="form" (ngSubmit)="save()">
+            <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form">
+            </formly-form>
+            <div class="form-btns ion-margin-top">
+              <ion-button type="submit" fill="outline" size="small" [disabled]="!form.valid" color="primary">Add now</ion-button>
+              <ion-button (click)="isAdd = !isAdd" fill="outline" size="small" color="primary">Cancel</ion-button>
+              <button #reset hidden type="reset">reset</button>
+            </div>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="amenityList">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" *ngFor="let item of placeList; let i = index">
+            <ion-card>
+              <ion-card-content class="ion-text-center">
+                <fa-icon class="cardIcon amenityIcon" icon="{{item.icon}}"></fa-icon>
+                <ion-card-subtitle class="ion-no-margin">{{item.name}}</ion-card-subtitle>
+                <fa-icon (click)="delete(item.name)" class="cardIcon trashIcon" icon="trash-alt"></fa-icon>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+  </div>
+</ion-content>

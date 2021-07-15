@@ -22,7 +22,7 @@
     <ion-grid>
       <ion-row>
         <ion-col size="6" *ngFor="let item of placeList; let i = index">
-          <ion-card [routerLink]="[item.link, item.search]">
+          <ion-card [routerLink]="['/tabs/search', item.search]">
             <ion-card-content class="ion-text-center">
               <fa-icon class="cardIcon" icon="{{item.icon}}"></fa-icon>
               <ion-card-subtitle class="ion-no-margin">{{item.name}}</ion-card-subtitle>

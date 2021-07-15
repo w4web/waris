@@ -7,13 +7,6 @@ import { SettingPageRoutingModule } from './setting-routing.module';
 import { SettingPage } from './setting.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from '../shared/shared.module';
-import { FormlyModule } from '@ngx-formly/core';
-import { IconSelectComponent } from '../shared/components/icon-select.component';
-import { CustomSelectComponent } from '../shared/components/custom-select.component';
-
-export function minlengthValidationMessages(err: any, field: any): any {
-  return `Should have atleast ${field.templateOptions.minLength} characters`;
-}
 
 @NgModule({
   imports: [
@@ -22,18 +15,8 @@ export function minlengthValidationMessages(err: any, field: any): any {
     IonicModule,
     SettingPageRoutingModule,
     FontAwesomeModule,
-    SharedModule,
-    FormlyModule.forRoot({
-        types: [
-          { name: 'iSelect', component: IconSelectComponent },
-          { name: 'customSelect', component: CustomSelectComponent }
-        ],
-        validationMessages: [
-          { name: 'required', message: 'This field is required' },
-          { name: 'minlength', message: minlengthValidationMessages },
-        ],
-    }),
+    SharedModule
   ],
-  declarations: [SettingPage, IconSelectComponent, CustomSelectComponent]
+  declarations: [SettingPage]
 })
 export class SettingPageModule {}

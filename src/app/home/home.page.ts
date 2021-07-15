@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../shared/services/data.service';
+import { AmenityService } from '../shared/services/amenity.service';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +10,15 @@ export class HomePage implements OnInit {
 
   placeList;
 
-  constructor( public dataService: DataService ) { }
+  constructor( public amenityService: AmenityService ) {
+
+    this.amenityService.init();
+
+  }
 
   ngOnInit() {
 
-    this.dataService.getPlaceList().subscribe((data: any) => {
+    this.amenityService.placeList$.subscribe((data: any) => {
       this.placeList = data;
     });
 
