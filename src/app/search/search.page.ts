@@ -73,6 +73,8 @@ export class SearchPage implements OnInit {
     for(let i = 0; i < this.markers.length; i++) {
       if (this.markers[i].id == id) {
         this.markers[id-1].openPopup();
+      } else {
+        this.markers[i].closePopup();
       }
     }
 
