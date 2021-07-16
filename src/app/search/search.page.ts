@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as L from "leaflet";
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-search',
@@ -11,9 +12,13 @@ import * as L from "leaflet";
 export class SearchPage implements OnInit {
 
   map: L.Map;
-  places:any;
+  places: any;
+  placeName :any;
 
-  placeName;
+  marker: any;
+  markers = [];
+
+  @ViewChild(IonContent) content: IonContent;
 
   constructor( public HttpClient: HttpClient, public router: Router, public activatedRoute: ActivatedRoute ) {
 
@@ -53,24 +58,25 @@ export class SearchPage implements OnInit {
       popupAnchor: [0, -20]
     });
 
-    // places.forEach((place) => {
-    //   L.marker([place.latlng.lat, place.latlng.lng], {icon: customMarkerIcon})
-    //   .bindPopup(`<div class="pop-card">
-    //                 <b>${place.name}</b>
-    //                 <p><small>${place.address}</small></p>
-    //               </div>`, { autoClose: false })
-    //   .on('click', () => this.router.navigateByUrl('/tabs/place'))
-    //   .addTo(this.map).openPopup();
-    // });
-
     places.forEach((place) => {
-      L.marker([place.latlng.lat, place.latlng.lng], {icon: customMarkerIcon})
-      .bindPopup(`<div class="pop-card">
-                    <b>${place.name}</b>
-                    <p><small>${place.address}</small></p>
-                  </div>`, { autoClose: false })
-      .addTo(this.map);
+      this.marker = L.marker([place.latlng.lat, place.latlng.lng], {icon: customMarkerIcon});
+      this.marker.bindPopup(`<div class="pop-card"><b>${place.name}</b><p><small>${place.address}</small></p></div>`, { autoClose: false });
+      this.marker["id"] = place.id;
+      this.marker.addTo(this.map);
+      this.markers.push(this.marker);
     });
+
+  }
+
+  showPopup(id): void {
+
+    for(let i = 0; i < this.markers.length; i++) {
+      if (this.markers[i].id == id) {
+        this.markers[id-1].openPopup();
+      }
+    }
+
+    this.content.scrollToTop(300);
 
   }
 
