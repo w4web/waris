@@ -35,8 +35,8 @@ export function minlengthValidationMessages(err: any, field: any): any {
         { name: 'required', message: 'This field is required' },
         { name: 'minlength', message: minlengthValidationMessages },
       ],
-  }),
+    }),
   ],
   declarations: [AmenityPage, IconSelectComponent, CustomSelectComponent, CustomInputComponent]
 })
-export class AmenityPageModule {}
+export class AmenityPageModule { }
